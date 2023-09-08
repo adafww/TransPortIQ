@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  postgres:
+    build:
+      context: ./PostgreSQL
+      dockerfile: Dockerfile  # Указываем имя Dockerfile
+    ports:
+      - "5433:5432"  # Пробрасываем порт 5432 из контейнера в порт 5433 на хосте
+    environment:
+      POSTGRES_DB: mydatabase
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
